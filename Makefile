@@ -4,15 +4,15 @@ dev:
 
 .PHONY: watch
 watch:
-	@docker compose watch --no-up
+	@docker-compose watch --no-up
 
 .PHONY: up
 up:
-	@docker compose up --build -d
+	@docker-compose up --build -d
 
 .PHONY: down
 down:
-	@docker compose down
+	@docker-compose down
 
 .PHONY: run-unit-tests
 run-unit-tests:
@@ -24,7 +24,7 @@ run-community-tests:
 
 .PHONY: run-integration-tests
 run-integration-tests:
-	docker compose run --rm --build backend poetry run pytest -c src/backend/pytest_integration.ini src/backend/tests/integration/$(file)
+	docker-compose run --rm --build backend poetry run pytest -c src/backend/pytest_integration.ini src/backend/tests/integration/$(file)
 
 run-tests: run-unit-tests
 
@@ -48,19 +48,19 @@ exec-terrarium:
 
 .PHONY: migration
 migration:
-	docker compose run --build backend alembic -c src/backend/alembic.ini revision --autogenerate -m "$(message)"
+	docker-compose run --build backend alembic -c src/backend/alembic.ini revision --autogenerate -m "$(message)"
 
 .PHONY: migrate
 migrate:
-	docker compose run --build backend alembic -c src/backend/alembic.ini upgrade head
+	docker-compose run --build backend alembic -c src/backend/alembic.ini upgrade head
 
 .PHONY: downgrade
 downgrade:
-	docker compose run --build backend alembic -c src/backend/alembic.ini downgrade -1
+	docker-compose run --build backend alembic -c src/backend/alembic.ini downgrade -1
 
 .PHONY: reset-db
 reset-db:
-	docker compose down
+	docker-compose down
 	docker volume rm cohere_toolkit_db
 
 .PHONY: install
@@ -124,14 +124,14 @@ build-web:
 
 .PHONY: test-db
 test-db:
-	docker compose stop test_db
-	docker compose rm -f test_db
-	docker compose up test_db -d
+	docker-compose stop test_db
+	docker-compose rm -f test_db
+	docker-compose up test_db -d
 
 .PHONY: dev-sync
 dev-sync:
-	@docker compose up --build sync_worker sync_publisher flower -d
+	@docker-compose up --build sync_worker sync_publisher flower -d
 
 .PHONY: dev-sync-down
 dev-sync-down:
-	@docker compose down sync_worker sync_publisher flower
+	@docker-compose down sync_worker sync_publisher flower
