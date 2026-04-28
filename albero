@@ -1,0 +1,1514 @@
+.
+├── CODEOWNERS
+├── CONTRIBUTING.md
+├── Dockerfile
+├── LICENSE
+├── Makefile
+├── Makefile.podman
+├── README.md
+├── albero
+├── app.json
+├── aws_copilot_deploy
+│   ├── aws-api.Dockerfile
+│   ├── aws-db.Dockerfile
+│   ├── aws-fe.Dockerfile
+│   ├── aws-nginx.Dockerfile
+│   ├── aws-terrarium.Dockerfile
+│   ├── aws_cleanup.sh
+│   ├── aws_deploy.sh
+│   └── nginx.conf
+├── azure_compose_deploy
+│   ├── api_entrypoint.sh
+│   ├── azure-api.Dockerfile
+│   ├── azure-db.Dockerfile
+│   ├── azure-fe.Dockerfile
+│   ├── azure-nginx.Dockerfile
+│   ├── azure-terrarium.Dockerfile
+│   ├── azure_cleanup.sh
+│   ├── azure_deploy.sh
+│   ├── configuration.yaml
+│   ├── docker-compose-azure.yml
+│   ├── nginx.conf
+│   └── secrets.yaml
+├── azuredeploy.hpa.json
+├── azuredeploy.json
+├── azuredeploy.parameters.json
+├── cloudbuild.yaml
+├── copilot
+│   ├── environments
+│   │   └── dev
+│   │       └── manifest.yml
+│   ├── toolkit-app-api
+│   │   └── manifest.yml
+│   ├── toolkit-app-db
+│   │   └── manifest.yml
+│   ├── toolkit-app-fe
+│   │   └── manifest.yml
+│   ├── toolkit-app-nginx
+│   │   └── manifest.yml
+│   └── toolkit-app-terrarium
+│       └── manifest.yml
+├── charts
+│   └── cohere-toolkit
+│       ├── Chart.lock
+│       ├── Chart.yaml
+│       ├── README.md
+│       ├── templates
+│       │   ├── _helpers.tpl
+│       │   ├── backend.yaml
+│       │   ├── frontend.yaml
+│       │   ├── migrations.yaml
+│       │   └── terrarium.yaml
+│       ├── values
+│       │   └── local.yaml
+│       └── values.yaml
+├── data
+│   └── dump.rdb
+├── docker-compose.yml
+├── docker_scripts
+│   ├── cloudrun-entrypoint.sh
+│   ├── entrypoint.sh
+│   ├── env-defaults
+│   ├── functions
+│   ├── gcp-entrypoint.sh
+│   └── nginx.conf
+├── docs
+│   ├── assets
+│   │   ├── banner.png
+│   │   ├── cloud_shell_stuck.png
+│   │   ├── toolkit.gif
+│   │   └── toolkit_graphic.png
+│   ├── auth_guide.md
+│   ├── command_model_providers.md
+│   ├── config_details
+│   │   └── config_description.md
+│   ├── custom_tool_guides
+│   │   ├── gmail.md
+│   │   ├── google_drive.md
+│   │   ├── slack.md
+│   │   ├── tool_auth_guide.md
+│   │   └── tool_guide.md
+│   ├── deployment_guides
+│   │   ├── aws_deployment.md
+│   │   ├── azure_deployment.md
+│   │   └── gcp_deployment.md
+│   ├── github_codespaces.md
+│   ├── github_migrations_action.md
+│   ├── how_to_guides.md
+│   ├── postman
+│   │   └── Toolkit.postman_collection.json
+│   ├── service_deployments.md
+│   ├── setup.md
+│   ├── text_to_speech.md
+│   ├── theming.md
+│   ├── troubleshooting.md
+│   └── walkthrough
+│       ├── assets
+│       │   ├── analytics.png
+│       │   ├── auth.png
+│       │   ├── cloud_deploys.png
+│       │   ├── default_set_up.png
+│       │   ├── flows.png
+│       │   ├── interfaces.png
+│       │   ├── memory.png
+│       │   ├── model_providers.png
+│       │   ├── toolkit.png
+│       │   ├── tools.png
+│       │   └── whole_set_up.png
+│       └── walkthrough.md
+├── ecs_service.json
+├── gcp.backend.Dockerfile
+├── gcp.frontend.Dockerfile
+├── gcp_postcreate_hook.sh
+├── poetry.lock
+├── pyproject.toml
+└── src
+    ├── __init__.py
+    ├── backend
+    │   ├── Dockerfile
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   └── __init__.cpython-311.pyc
+    │   ├── alembic
+    │   │   ├── README
+    │   │   ├── env.py
+    │   │   ├── script.py.mako
+    │   │   └── versions
+    │   │       ├── 2024_04_19_6bc65982b077_initial.py
+    │   │       ├── 2024_04_24_2853273872ca_add_indices.py
+    │   │       ├── 2024_05_02_b88f00283a27_add_user_pw_hash.py
+    │   │       ├── 2024_05_07_6553b76de6ca_documents_update.py
+    │   │       ├── 2024_05_07_c15b848babe3_merge_migrationsy.py
+    │   │       ├── 2024_06_05_3247f8fd3f71_add_agents.py
+    │   │       ├── 2024_06_06_f5819b10ef2a_add_file_content.py
+    │   │       ├── 2024_06_10_28763d200b29_add_blacklist.py
+    │   │       ├── 2024_06_10_a9b07acef4e8_modify_agents.py
+    │   │       ├── 2024_06_12_922e874930bf_add_tools_to_agents.py
+    │   │       ├── 2024_06_15_3f207ae41477_update_agents.py
+    │   │       ├── 2024_06_18_982bbef24559_update_conversations.py
+    │   │       ├── 2024_06_19_8bc604e45f2d_add_base_organizations.py
+    │   │       ├── 2024_06_21_a6efd9f047b4_add_tool_auth.py
+    │   │       ├── 2024_06_25_658924a376dd_add_tool_calls.py
+    │   │       ├── 2024_06_26_52633db2dae9_add_snapshots.py
+    │   │       ├── 2024_06_27_2d766d30a3d2_add_agent_tool_metadata.py
+    │   │       ├── 2024_06_28_a48691a80366_update_agent_tool_metadata.py
+    │   │       ├── 2024_07_16_ed17f144f4bf_add_default_user.py
+    │   │       ├── 2024_07_16_f077676dfd5d_update_foreign_keys.py
+    │   │       ├── 2024_07_24_208f735ed937_agnostic_patch.py
+    │   │       ├── 2024_07_31_5d390e50f423_add_message_files.py
+    │   │       ├── 2024_07_31_7d85cfb9ec27_add_conversation_files.py
+    │   │       ├── 2024_08_01_117f0d9b1d3d_seed_deployments_data.py
+    │   │       ├── 2024_08_01_9891196e479a_add_deployment_model_tables.py
+    │   │       ├── 2024_08_07_71d7b35c8a44_.py
+    │   │       ├── 2024_08_19_c301506b3676_.py
+    │   │       ├── 2024_08_21_08bcb9a24d9b_remove_file_path.py
+    │   │       ├── 2024_08_22_ac3933258035_.py
+    │   │       ├── 2024_09_08_a76ebb869eb8_.py
+    │   │       ├── 2024_09_16_20b03fd331e8_add_is_pinned_flag.py
+    │   │       └── 2024_10_28_74ba7e1b4810_update_agent_deployment_model.py
+    │   ├── alembic.ini
+    │   ├── cli
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   ├── constants.cpython-311.pyc
+    │   │   │   ├── prompts.cpython-311.pyc
+    │   │   │   ├── setters.cpython-311.pyc
+    │   │   │   └── utils.cpython-311.pyc
+    │   │   ├── constants.py
+    │   │   ├── main.py
+    │   │   ├── prompts.py
+    │   │   ├── setters.py
+    │   │   └── utils.py
+    │   ├── config
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   ├── deployments.cpython-311.pyc
+    │   │   │   └── settings.cpython-311.pyc
+    │   │   ├── auth.py
+    │   │   ├── configuration.template.yaml
+    │   │   ├── configuration.yaml
+    │   │   ├── default_agent.py
+    │   │   ├── deployments.py
+    │   │   ├── routers.py
+    │   │   ├── secrets.template.yaml
+    │   │   ├── secrets.yaml
+    │   │   ├── settings.py
+    │   │   └── tools.py
+    │   ├── crud
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   ├── organization.cpython-311.pyc
+    │   │   │   └── user.cpython-311.pyc
+    │   │   ├── agent.py
+    │   │   ├── agent_tool_metadata.py
+    │   │   ├── blacklist.py
+    │   │   ├── citation.py
+    │   │   ├── conversation.py
+    │   │   ├── deployment.py
+    │   │   ├── document.py
+    │   │   ├── file.py
+    │   │   ├── group.py
+    │   │   ├── message.py
+    │   │   ├── model.py
+    │   │   ├── organization.py
+    │   │   ├── snapshot.py
+    │   │   ├── tool_auth.py
+    │   │   ├── tool_call.py
+    │   │   └── user.py
+    │   ├── chat
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   ├── collate.cpython-311.pyc
+    │   │   │   └── enums.cpython-311.pyc
+    │   │   ├── base.py
+    │   │   ├── collate.py
+    │   │   ├── custom
+    │   │   │   ├── __init__.py
+    │   │   │   ├── custom.py
+    │   │   │   ├── tool_calls.py
+    │   │   │   └── utils.py
+    │   │   └── enums.py
+    │   ├── database_models
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   ├── agent.cpython-311.pyc
+    │   │   │   ├── agent_tool_metadata.cpython-311.pyc
+    │   │   │   ├── base.cpython-311.pyc
+    │   │   │   ├── blacklist.cpython-311.pyc
+    │   │   │   ├── citation.cpython-311.pyc
+    │   │   │   ├── conversation.cpython-311.pyc
+    │   │   │   ├── database.cpython-311.pyc
+    │   │   │   ├── deployment.cpython-311.pyc
+    │   │   │   ├── document.cpython-311.pyc
+    │   │   │   ├── file.cpython-311.pyc
+    │   │   │   ├── group.cpython-311.pyc
+    │   │   │   ├── message.cpython-311.pyc
+    │   │   │   ├── model.cpython-311.pyc
+    │   │   │   ├── organization.cpython-311.pyc
+    │   │   │   ├── snapshot.cpython-311.pyc
+    │   │   │   ├── tool_auth.cpython-311.pyc
+    │   │   │   ├── tool_call.cpython-311.pyc
+    │   │   │   └── user.cpython-311.pyc
+    │   │   ├── agent.py
+    │   │   ├── agent_tool_metadata.py
+    │   │   ├── base.py
+    │   │   ├── blacklist.py
+    │   │   ├── citation.py
+    │   │   ├── conversation.py
+    │   │   ├── database.py
+    │   │   ├── deployment.py
+    │   │   ├── document.py
+    │   │   ├── file.py
+    │   │   ├── group.py
+    │   │   ├── message.py
+    │   │   ├── model.py
+    │   │   ├── organization.py
+    │   │   ├── seeders
+    │   │   │   └── deplyments_models_seed.py
+    │   │   ├── snapshot.py
+    │   │   ├── tool.py
+    │   │   ├── tool_auth.py
+    │   │   ├── tool_call.py
+    │   │   └── user.py
+    │   ├── main.py
+    │   ├── model_deployments
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   ├── azure.cpython-311.pyc
+    │   │   │   ├── base.cpython-311.pyc
+    │   │   │   ├── bedrock.cpython-311.pyc
+    │   │   │   ├── cohere_platform.cpython-311.pyc
+    │   │   │   ├── sagemaker.cpython-311.pyc
+    │   │   │   ├── single_container.cpython-311.pyc
+    │   │   │   └── utils.cpython-311.pyc
+    │   │   ├── azure.py
+    │   │   ├── base.py
+    │   │   ├── bedrock.py
+    │   │   ├── cohere_platform.py
+    │   │   ├── sagemaker.py
+    │   │   ├── single_container.py
+    │   │   └── utils.py
+    │   ├── pytest.ini
+    │   ├── pytest_integration.ini
+    │   ├── routers
+    │   │   ├── __init__.py
+    │   │   ├── agent.py
+    │   │   ├── auth.py
+    │   │   ├── conversation.py
+    │   │   ├── chat.py
+    │   │   ├── deployment.py
+    │   │   ├── experimental_features.py
+    │   │   ├── model.py
+    │   │   ├── organization.py
+    │   │   ├── scim.py
+    │   │   ├── snapshot.py
+    │   │   ├── tool.py
+    │   │   ├── user.py
+    │   │   └── utils.py
+    │   ├── schemas
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   ├── agent.cpython-311.pyc
+    │   │   │   ├── citation.cpython-311.pyc
+    │   │   │   ├── cohere_chat.cpython-311.pyc
+    │   │   │   ├── context.cpython-311.pyc
+    │   │   │   ├── chat.cpython-311.pyc
+    │   │   │   ├── deployment.cpython-311.pyc
+    │   │   │   ├── document.cpython-311.pyc
+    │   │   │   ├── file.cpython-311.pyc
+    │   │   │   ├── message.cpython-311.pyc
+    │   │   │   ├── model.cpython-311.pyc
+    │   │   │   ├── organization.cpython-311.pyc
+    │   │   │   ├── search_query.cpython-311.pyc
+    │   │   │   ├── tool.cpython-311.pyc
+    │   │   │   └── user.cpython-311.pyc
+    │   │   ├── agent.py
+    │   │   ├── auth.py
+    │   │   ├── citation.py
+    │   │   ├── cohere_chat.py
+    │   │   ├── context.py
+    │   │   ├── conversation.py
+    │   │   ├── chat.py
+    │   │   ├── deployment.py
+    │   │   ├── document.py
+    │   │   ├── file.py
+    │   │   ├── message.py
+    │   │   ├── model.py
+    │   │   ├── organization.py
+    │   │   ├── scim.py
+    │   │   ├── search_query.py
+    │   │   ├── snapshot.py
+    │   │   ├── tool.py
+    │   │   ├── tool_auth.py
+    │   │   └── user.py
+    │   ├── services
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   ├── transaction.cpython-311.pyc
+    │   │   │   └── utils.cpython-311.pyc
+    │   │   ├── agent.py
+    │   │   ├── auth
+    │   │   │   ├── __init__.py
+    │   │   │   ├── __pycache__
+    │   │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   │   └── crypto.cpython-311.pyc
+    │   │   │   ├── crypto.py
+    │   │   │   ├── jwt.py
+    │   │   │   ├── request_validators.py
+    │   │   │   ├── strategies
+    │   │   │   │   ├── __init__.py
+    │   │   │   │   ├── __pycache__
+    │   │   │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   │   │   ├── base.cpython-311.pyc
+    │   │   │   │   │   ├── basic.cpython-311.pyc
+    │   │   │   │   │   ├── google_oauth.cpython-311.pyc
+    │   │   │   │   │   └── oidc.cpython-311.pyc
+    │   │   │   │   ├── base.py
+    │   │   │   │   ├── basic.py
+    │   │   │   │   ├── google_oauth.py
+    │   │   │   │   └── oidc.py
+    │   │   │   └── utils.py
+    │   │   ├── cache.py
+    │   │   ├── context.py
+    │   │   ├── conversation.py
+    │   │   ├── chat.py
+    │   │   ├── env.py
+    │   │   ├── file.py
+    │   │   ├── generators.py
+    │   │   ├── logger
+    │   │   │   ├── __init__.py
+    │   │   │   ├── __pycache__
+    │   │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   │   └── utils.cpython-311.pyc
+    │   │   │   ├── middleware.py
+    │   │   │   ├── strategies
+    │   │   │   │   ├── __init__.py
+    │   │   │   │   ├── __pycache__
+    │   │   │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   │   │   ├── base.cpython-311.pyc
+    │   │   │   │   │   └── structured_log.cpython-311.pyc
+    │   │   │   │   ├── base.py
+    │   │   │   │   └── structured_log.py
+    │   │   │   └── utils.py
+    │   │   ├── request_validators.py
+    │   │   ├── snapshot.py
+    │   │   ├── synthesizer.py
+    │   │   ├── transaction.py
+    │   │   └── utils.py
+    │   ├── tests
+    │   │   ├── integration
+    │   │   │   ├── __init__.py
+    │   │   │   ├── conftest.py
+    │   │   │   ├── crud
+    │   │   │   │   ├── __init__.py
+    │   │   │   │   ├── test_deployment.py
+    │   │   │   │   └── test_model.py
+    │   │   │   ├── routers
+    │   │   │   │   ├── __init__.py
+    │   │   │   │   ├── test_agent.py
+    │   │   │   │   ├── test_conversation.py
+    │   │   │   │   └── test_model.py
+    │   │   │   └── services
+    │   │   │       ├── __init__.py
+    │   │   │       ├── auth
+    │   │   │       │   ├── __init__.py
+    │   │   │       │   ├── strategies
+    │   │   │       │   │   ├── __init__.py
+    │   │   │       │   │   └── test_basic.py
+    │   │   │       │   ├── test_jwt.py
+    │   │   │       │   └── test_request_validators.py
+    │   │   │       └── test_cache.py
+    │   │   └── unit
+    │   │       ├── README.md
+    │   │       ├── __init__.py
+    │   │       ├── cli
+    │   │       │   └── test_main.py
+    │   │       ├── config
+    │   │       │   ├── test_deployments.py
+    │   │       │   └── test_tools.py
+    │   │       ├── configuration.yaml
+    │   │       ├── conftest.py
+    │   │       ├── crud
+    │   │       │   ├── __init__.py
+    │   │       │   ├── test_agent.py
+    │   │       │   ├── test_agent_tool_metadata.py
+    │   │       │   ├── test_blacklist.py
+    │   │       │   ├── test_citation.py
+    │   │       │   ├── test_conversation.py
+    │   │       │   ├── test_document.py
+    │   │       │   ├── test_file.py
+    │   │       │   ├── test_group.py
+    │   │       │   ├── test_message.py
+    │   │       │   ├── test_organization.py
+    │   │       │   ├── test_snapshot.py
+    │   │       │   ├── test_tool_auth.py
+    │   │       │   ├── test_tool_call.py
+    │   │       │   └── test_user.py
+    │   │       ├── chat
+    │   │       │   └── test_tool_calls.py
+    │   │       ├── factories
+    │   │       │   ├── __init__.py
+    │   │       │   ├── agent.py
+    │   │       │   ├── agent_tool_metadata.py
+    │   │       │   ├── base.py
+    │   │       │   ├── blacklist.py
+    │   │       │   ├── citation.py
+    │   │       │   ├── citation_documents.py
+    │   │       │   ├── conversation.py
+    │   │       │   ├── deployment.py
+    │   │       │   ├── document.py
+    │   │       │   ├── file.py
+    │   │       │   ├── group.py
+    │   │       │   ├── message.py
+    │   │       │   ├── model.py
+    │   │       │   ├── organization.py
+    │   │       │   ├── snapshot.py
+    │   │       │   ├── tool_auth.py
+    │   │       │   ├── tool_call.py
+    │   │       │   └── user.py
+    │   │       ├── model_deployments
+    │   │       │   ├── __init__.py
+    │   │       │   ├── conftest.py
+    │   │       │   ├── mock_deployments
+    │   │       │   │   ├── __init__.py
+    │   │       │   │   ├── mock_azure.py
+    │   │       │   │   ├── mock_bedrock.py
+    │   │       │   │   ├── mock_cohere_platform.py
+    │   │       │   │   ├── mock_sagemaker.py
+    │   │       │   │   └── mock_single_container.py
+    │   │       │   ├── test_azure.py
+    │   │       │   ├── test_bedrock.py
+    │   │       │   ├── test_cohere_platform.py
+    │   │       │   ├── test_sagemaker.py
+    │   │       │   └── test_single_container.py
+    │   │       ├── routers
+    │   │       │   ├── __init__.py
+    │   │       │   ├── auth
+    │   │       │   │   ├── conftest.py
+    │   │       │   │   ├── test_auth.py
+    │   │       │   │   ├── test_authorization_header.py
+    │   │       │   │   └── test_basic_auth.py
+    │   │       │   ├── conftest.py
+    │   │       │   ├── test_agent.py
+    │   │       │   ├── test_conversation.py
+    │   │       │   ├── test_chat.py
+    │   │       │   ├── test_deployment.py
+    │   │       │   ├── test_main.py
+    │   │       │   ├── test_organization.py
+    │   │       │   ├── test_scim.py
+    │   │       │   ├── test_snapshot.py
+    │   │       │   ├── test_tool.py
+    │   │       │   └── test_user.py
+    │   │       ├── secrets.yaml
+    │   │       ├── services
+    │   │       │   └── test_chat.py
+    │   │       ├── test_data
+    │   │       │   ├── 26mb.pdf
+    │   │       │   ├── Cardistry.pdf
+    │   │       │   ├── Mariana_Trench.pdf
+    │   │       │   ├── Mount_Everest.pdf
+    │   │       │   └── Tapas.pdf
+    │   │       └── tools
+    │   │           ├── test_calculator.py
+    │   │           ├── test_collate.py
+    │   │           └── test_lang_chain.py
+    │   └── tools
+    │       ├── __init__.py
+    │       ├── base.py
+    │       ├── brave_search
+    │       │   ├── __init__.py
+    │       │   ├── client.py
+    │       │   └── tool.py
+    │       ├── calculator.py
+    │       ├── files.py
+    │       ├── gmail
+    │       │   ├── __init__.py
+    │       │   ├── auth.py
+    │       │   ├── client.py
+    │       │   ├── constants.py
+    │       │   ├── tool.py
+    │       │   └── utils.py
+    │       ├── google_drive
+    │       │   ├── __init__.py
+    │       │   ├── auth.py
+    │       │   ├── constants.py
+    │       │   ├── tool.py
+    │       │   └── utils.py
+    │       ├── google_search.py
+    │       ├── hybrid_search.py
+    │       ├── lang_chain.py
+    │       ├── python_interpreter.py
+    │       ├── slack
+    │       │   ├── __init__.py
+    │       │   ├── auth.py
+    │       │   ├── client.py
+    │       │   ├── constants.py
+    │       │   ├── tool.py
+    │       │   └── utils.py
+    │       ├── tavily_search.py
+    │       ├── utils
+    │       │   ├── async_download.py
+    │       │   ├── download.py
+    │       │   ├── mixins.py
+    │       │   └── tools_checkers.py
+    │       └── web_scrape.py
+    ├── community
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   └── __init__.cpython-311.pyc
+    │   ├── config
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   └── deployments.cpython-311.pyc
+    │   │   ├── deployments.py
+    │   │   └── tools.py
+    │   ├── model_deployments
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   │   ├── __init__.cpython-311.pyc
+    │   │   │   └── hugging_face.cpython-311.pyc
+    │   │   ├── hugging_face.py
+    │   │   └── local_model.py
+    │   ├── tests
+    │   │   ├── model_deployments
+    │   │   │   └── test_local_model.py
+    │   │   └── tools
+    │   │       ├── test_arxiv.py
+    │   │       ├── test_clinicaltrials.py
+    │   │       ├── test_llama_index.py
+    │   │       └── test_pub_med.py
+    │   └── tools
+    │       ├── __init__.py
+    │       ├── arxiv.py
+    │       ├── clinicaltrials.py
+    │       ├── connector.py
+    │       ├── llama_index.py
+    │       ├── pub_med.py
+    │       └── wolfram.py
+    └── interfaces
+        ├── assistants_web
+        │   ├── Dockerfile
+        │   ├── README.md
+        │   ├── next-env.d.ts
+        │   ├── next.config.mjs
+        │   ├── openapi-ts.config.ts
+        │   ├── package-lock.json
+        │   ├── package.json
+        │   ├── patches
+        │   │   └── react-scroll-to-bottom+4.2.0.patch
+        │   ├── postcss.config.js
+        │   ├── public
+        │   │   ├── favicon.ico
+        │   │   ├── images
+        │   │   │   ├── android-chrome-192x192.png
+        │   │   │   ├── android-chrome-512x512.png
+        │   │   │   ├── apple-touch-icon.png
+        │   │   │   ├── favicon-16x16.png
+        │   │   │   ├── favicon-32x32.png
+        │   │   │   ├── kycCellBackground.png
+        │   │   │   ├── mushroom-filled-icon-512x512.png
+        │   │   │   ├── share.png
+        │   │   │   └── white-filled-icon-512x512.png
+        │   │   ├── site.webmanifest
+        │   │   └── videos
+        │   │       └── KYC_BG_5K.mp4
+        │   ├── src
+        │   │   ├── app
+        │   │   │   ├── (auth)
+        │   │   │   │   ├── auth
+        │   │   │   │   │   └── [strategy]
+        │   │   │   │   │       ├── OauthCallback.tsx
+        │   │   │   │   │       └── page.tsx
+        │   │   │   │   ├── layout.tsx
+        │   │   │   │   ├── login
+        │   │   │   │   │   ├── Login.tsx
+        │   │   │   │   │   └── page.tsx
+        │   │   │   │   ├── logout
+        │   │   │   │   │   ├── Logout.tsx
+        │   │   │   │   │   └── page.tsx
+        │   │   │   │   └── register
+        │   │   │   │       ├── Register.tsx
+        │   │   │   │       └── page.tsx
+        │   │   │   ├── (main)
+        │   │   │   │   ├── (chat)
+        │   │   │   │   │   ├── Chat.tsx
+        │   │   │   │   │   ├── a
+        │   │   │   │   │   │   └── [agentId]
+        │   │   │   │   │   │       ├── c
+        │   │   │   │   │   │       │   └── [conversationId]
+        │   │   │   │   │   │       │       ├── loading.tsx
+        │   │   │   │   │   │       │       └── page.tsx
+        │   │   │   │   │   │       ├── loading.tsx
+        │   │   │   │   │   │       └── page.tsx
+        │   │   │   │   │   ├── c
+        │   │   │   │   │   │   └── [conversationId]
+        │   │   │   │   │   │       ├── loading.tsx
+        │   │   │   │   │   │       └── page.tsx
+        │   │   │   │   │   ├── layout.tsx
+        │   │   │   │   │   └── page.tsx
+        │   │   │   │   ├── discover
+        │   │   │   │   │   ├── DiscoverAgentCard.tsx
+        │   │   │   │   │   ├── DiscoverAgents.tsx
+        │   │   │   │   │   └── page.tsx
+        │   │   │   │   ├── edit
+        │   │   │   │   │   └── [agentId]
+        │   │   │   │   │       ├── UpdateAgent.tsx
+        │   │   │   │   │       └── page.tsx
+        │   │   │   │   ├── layout.tsx
+        │   │   │   │   ├── loading.tsx
+        │   │   │   │   ├── new
+        │   │   │   │   │   ├── CreateAgent.tsx
+        │   │   │   │   │   └── page.tsx
+        │   │   │   │   └── settings
+        │   │   │   │       ├── Settings.tsx
+        │   │   │   │       └── page.tsx
+        │   │   │   ├── _providers.tsx
+        │   │   │   ├── error.tsx
+        │   │   │   ├── healthz
+        │   │   │   │   ├── api
+        │   │   │   │   │   └── route.tsx
+        │   │   │   │   └── page.tsx
+        │   │   │   ├── layout.tsx
+        │   │   │   ├── not-found.tsx
+        │   │   │   └── share
+        │   │   │       └── [id]
+        │   │   │           ├── ReadOnlyConversation.tsx
+        │   │   │           └── page.tsx
+        │   │   ├── assets
+        │   │   │   ├── icons
+        │   │   │   │   ├── Add.tsx
+        │   │   │   │   ├── ArrowClockwise.tsx
+        │   │   │   │   ├── ArrowDown.tsx
+        │   │   │   │   ├── ArrowLeft.tsx
+        │   │   │   │   ├── ArrowRight.tsx
+        │   │   │   │   ├── ArrowSubmit.tsx
+        │   │   │   │   ├── ArrowUp.tsx
+        │   │   │   │   ├── ArrowUpRight.tsx
+        │   │   │   │   ├── BookOpenText.tsx
+        │   │   │   │   ├── Calculator.tsx
+        │   │   │   │   ├── CirclesFour.tsx
+        │   │   │   │   ├── CirclesThree.tsx
+        │   │   │   │   ├── Close.tsx
+        │   │   │   │   ├── CloseDrawer.tsx
+        │   │   │   │   ├── CodeSimple.tsx
+        │   │   │   │   ├── Compass.tsx
+        │   │   │   │   ├── Copy.tsx
+        │   │   │   │   ├── ChatCircleDots.tsx
+        │   │   │   │   ├── Checkmark.tsx
+        │   │   │   │   ├── ChevronDown.tsx
+        │   │   │   │   ├── ChevronLeft.tsx
+        │   │   │   │   ├── ChevronRight.tsx
+        │   │   │   │   ├── ChevronUp.tsx
+        │   │   │   │   ├── Desktop.tsx
+        │   │   │   │   ├── Download.tsx
+        │   │   │   │   ├── Edit.tsx
+        │   │   │   │   ├── File.tsx
+        │   │   │   │   ├── FileSearch.tsx
+        │   │   │   │   ├── Folder.tsx
+        │   │   │   │   ├── Gmail.tsx
+        │   │   │   │   ├── GoogleDrive.tsx
+        │   │   │   │   ├── Hide.tsx
+        │   │   │   │   ├── Information.tsx
+        │   │   │   │   ├── Kebab.tsx
+        │   │   │   │   ├── Link.tsx
+        │   │   │   │   ├── List.tsx
+        │   │   │   │   ├── Menu.tsx
+        │   │   │   │   ├── Moon.tsx
+        │   │   │   │   ├── NewMessage.tsx
+        │   │   │   │   ├── OneDrive.tsx
+        │   │   │   │   ├── Paperclip.tsx
+        │   │   │   │   ├── Pin.tsx
+        │   │   │   │   ├── Profile.tsx
+        │   │   │   │   ├── Regenerate.tsx
+        │   │   │   │   ├── Search.tsx
+        │   │   │   │   ├── Settings.tsx
+        │   │   │   │   ├── Share.tsx
+        │   │   │   │   ├── Show.tsx
+        │   │   │   │   ├── SignOut.tsx
+        │   │   │   │   ├── Slack.tsx
+        │   │   │   │   ├── Sparkle.tsx
+        │   │   │   │   ├── Stop.tsx
+        │   │   │   │   ├── Subtract.tsx
+        │   │   │   │   ├── Sun.tsx
+        │   │   │   │   ├── ThumbsDown.tsx
+        │   │   │   │   ├── ThumbsUp.tsx
+        │   │   │   │   ├── Trash.tsx
+        │   │   │   │   ├── Upload.tsx
+        │   │   │   │   ├── UsersThree.tsx
+        │   │   │   │   ├── Volume.tsx
+        │   │   │   │   ├── Warning.tsx
+        │   │   │   │   ├── Web.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   └── lotties
+        │   │   │       ├── icon-loop-coral-950.json
+        │   │   │       └── icon-loop-coral-mushroom.json
+        │   │   ├── cohere-client
+        │   │   │   ├── ClientProvider.tsx
+        │   │   │   ├── client.ts
+        │   │   │   ├── constants.ts
+        │   │   │   ├── generated
+        │   │   │   │   ├── CohereClientGenerated.ts
+        │   │   │   │   ├── core
+        │   │   │   │   │   ├── ApiError.ts
+        │   │   │   │   │   ├── ApiRequestOptions.ts
+        │   │   │   │   │   ├── ApiResult.ts
+        │   │   │   │   │   ├── BaseHttpRequest.ts
+        │   │   │   │   │   ├── CancelablePromise.ts
+        │   │   │   │   │   ├── FetchHttpRequest.ts
+        │   │   │   │   │   ├── OpenAPI.ts
+        │   │   │   │   │   └── request.ts
+        │   │   │   │   ├── index.ts
+        │   │   │   │   ├── schemas.gen.ts
+        │   │   │   │   ├── services.gen.ts
+        │   │   │   │   └── types.gen.ts
+        │   │   │   ├── index.ts
+        │   │   │   ├── mappings.ts
+        │   │   │   ├── types.ts
+        │   │   │   └── utils.ts
+        │   │   ├── components
+        │   │   │   ├── AgentSettingsForm
+        │   │   │   │   ├── ConfigStep.tsx
+        │   │   │   │   ├── DataSourcesStep.tsx
+        │   │   │   │   ├── DefineStep.tsx
+        │   │   │   │   ├── StatusConnection.tsx
+        │   │   │   │   ├── ToolsStep.tsx
+        │   │   │   │   ├── VisibilityStep.tsx
+        │   │   │   │   └── index.tsx
+        │   │   │   ├── Agents
+        │   │   │   │   └── AgentLogo.tsx
+        │   │   │   ├── Auth
+        │   │   │   │   ├── AuthLink.tsx
+        │   │   │   │   ├── CellBackground.tsx
+        │   │   │   │   ├── Navigation.tsx
+        │   │   │   │   ├── NavigationUserMenu.tsx
+        │   │   │   │   ├── OidcSSOButton.tsx
+        │   │   │   │   ├── WelcomePage.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   ├── Composer
+        │   │   │   │   ├── Composer.tsx
+        │   │   │   │   ├── ComposerError.tsx
+        │   │   │   │   ├── ComposerFile.tsx
+        │   │   │   │   ├── ComposerFiles.tsx
+        │   │   │   │   ├── ComposerToolbar.tsx
+        │   │   │   │   ├── DataSourceMenu.tsx
+        │   │   │   │   ├── FilesMenu.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   ├── Conversation
+        │   │   │   │   ├── Conversation.tsx
+        │   │   │   │   ├── ConversationError.tsx
+        │   │   │   │   ├── ConversationPanel.tsx
+        │   │   │   │   ├── Header.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   ├── Global
+        │   │   │   │   ├── MobileHeader.tsx
+        │   │   │   │   ├── Swipeable.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   ├── HotKeys
+        │   │   │   │   ├── CommandAction.tsx
+        │   │   │   │   ├── CommandActionGroup.tsx
+        │   │   │   │   ├── HotKeys.tsx
+        │   │   │   │   ├── HotKeysDialog.tsx
+        │   │   │   │   ├── HotKeysDialogInput.tsx
+        │   │   │   │   ├── HotKeysProvider.tsx
+        │   │   │   │   ├── custom-views
+        │   │   │   │   │   ├── Search.tsx
+        │   │   │   │   │   └── SwitchAssistants.tsx
+        │   │   │   │   ├── domain.ts
+        │   │   │   │   ├── hotkeys
+        │   │   │   │   │   ├── assistants.tsx
+        │   │   │   │   │   ├── conversation.tsx
+        │   │   │   │   │   ├── search.tsx
+        │   │   │   │   │   ├── settings.tsx
+        │   │   │   │   │   └── view.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   ├── Markdown
+        │   │   │   │   ├── Markdown.tsx
+        │   │   │   │   ├── directives
+        │   │   │   │   │   ├── cite.ts
+        │   │   │   │   │   ├── code.ts
+        │   │   │   │   │   ├── index.ts
+        │   │   │   │   │   ├── table-tools.ts
+        │   │   │   │   │   ├── tag.ts
+        │   │   │   │   │   ├── unknown.ts
+        │   │   │   │   │   └── utils.ts
+        │   │   │   │   ├── index.ts
+        │   │   │   │   └── tags
+        │   │   │   │       ├── Anchor.tsx
+        │   │   │   │       ├── Iframe.tsx
+        │   │   │   │       ├── P.tsx
+        │   │   │   │       ├── Pre.tsx
+        │   │   │   │       ├── References.tsx
+        │   │   │   │       └── index.ts
+        │   │   │   ├── MessageRow
+        │   │   │   │   ├── Avatar.tsx
+        │   │   │   │   ├── Citation.tsx
+        │   │   │   │   ├── CitationTextHighlighter.tsx
+        │   │   │   │   ├── DataTable.tsx
+        │   │   │   │   ├── MarkdownImage.tsx
+        │   │   │   │   ├── MessageContent.tsx
+        │   │   │   │   ├── MessageFile.tsx
+        │   │   │   │   ├── MessageRow.tsx
+        │   │   │   │   ├── ToolEvents.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   ├── MessagingContainer
+        │   │   │   │   ├── AssistantTools.tsx
+        │   │   │   │   ├── MessagingContainer.tsx
+        │   │   │   │   ├── Welcome.tsx
+        │   │   │   │   ├── WelcomeGuideTooltip.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   ├── Modals
+        │   │   │   │   ├── DeleteAgent.tsx
+        │   │   │   │   ├── DeleteConversations.tsx
+        │   │   │   │   ├── EditConversationTitle.tsx
+        │   │   │   │   └── ShareConversation.tsx
+        │   │   │   ├── Providers
+        │   │   │   │   ├── GlobalHead.tsx
+        │   │   │   │   ├── ToastNotification.tsx
+        │   │   │   │   ├── ViewportFix.tsx
+        │   │   │   │   ├── WebManifestHead.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   ├── SideNavPanel
+        │   │   │   │   ├── AgentIcon.tsx
+        │   │   │   │   ├── ConversationCard.tsx
+        │   │   │   │   ├── ConversationList.tsx
+        │   │   │   │   ├── ConversationListLoading.tsx
+        │   │   │   │   ├── ConversationListPanelGroup.tsx
+        │   │   │   │   ├── SideNavPanel.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   └── UI
+        │   │   │       ├── Banner.tsx
+        │   │   │       ├── Button.tsx
+        │   │   │       ├── CodeSnippet.tsx
+        │   │   │       ├── CollapsibleSection.tsx
+        │   │   │       ├── CopyToClipboardButton.tsx
+        │   │   │       ├── CoralLogo.tsx
+        │   │   │       ├── Checkbox.tsx
+        │   │   │       ├── DarkModeToggle.tsx
+        │   │   │       ├── DocumentIcon.tsx
+        │   │   │       ├── DragDropFileInput.tsx
+        │   │   │       ├── Dropdown.tsx
+        │   │   │       ├── FileViewer.tsx
+        │   │   │       ├── GuideTooltip.tsx
+        │   │   │       ├── Icon.tsx
+        │   │   │       ├── IconButton.tsx
+        │   │   │       ├── InlineLink.tsx
+        │   │   │       ├── Input.tsx
+        │   │   │       ├── InputLabel.tsx
+        │   │   │       ├── InputSearch.tsx
+        │   │   │       ├── KebabMenu.tsx
+        │   │   │       ├── Logo.tsx
+        │   │   │       ├── LongPressMenu.tsx
+        │   │   │       ├── Modal.tsx
+        │   │   │       ├── RadioGroup.tsx
+        │   │   │       ├── Shortcut.tsx
+        │   │   │       ├── ShowStepsToggle.tsx
+        │   │   │       ├── Skeleton.tsx
+        │   │   │       ├── Spinner.tsx
+        │   │   │       ├── Stories
+        │   │   │       │   ├── Banner.stories.tsx
+        │   │   │       │   ├── Button.stories.tsx
+        │   │   │       │   ├── Checkbox.stories.tsx
+        │   │   │       │   └── Icon.stories.tsx
+        │   │   │       ├── Switch.tsx
+        │   │   │       ├── Tabs.tsx
+        │   │   │       ├── Tag.tsx
+        │   │   │       ├── Text.tsx
+        │   │   │       ├── Textarea.tsx
+        │   │   │       ├── ToggleCard.tsx
+        │   │   │       ├── Tooltip.tsx
+        │   │   │       └── index.ts
+        │   │   ├── constants
+        │   │   │   ├── colors.ts
+        │   │   │   ├── conversation.ts
+        │   │   │   ├── index.ts
+        │   │   │   ├── setup.ts
+        │   │   │   ├── tailwindConfigValues.ts
+        │   │   │   └── tools.ts
+        │   │   ├── context
+        │   │   │   ├── ModalContext.tsx
+        │   │   │   └── index.tsx
+        │   │   ├── domain
+        │   │   │   └── chat.ts
+        │   │   ├── env.mjs
+        │   │   ├── hooks
+        │   │   │   ├── index.ts
+        │   │   │   ├── use-actions.tsx
+        │   │   │   ├── use-agents.ts
+        │   │   │   ├── use-auth.ts
+        │   │   │   ├── use-brandedColors.ts
+        │   │   │   ├── use-breakpoint.ts
+        │   │   │   ├── use-conversation.tsx
+        │   │   │   ├── use-chat.ts
+        │   │   │   ├── use-chatRoutes.ts
+        │   │   │   ├── use-deployments.ts
+        │   │   │   ├── use-experimentalFeatures.ts
+        │   │   │   ├── use-files.ts
+        │   │   │   ├── use-fixCopyBug.ts
+        │   │   │   ├── use-ftux.ts
+        │   │   │   ├── use-generateTitle.ts
+        │   │   │   ├── use-grounding.ts
+        │   │   │   ├── use-lazyRef.ts
+        │   │   │   ├── use-oidcAuthRoute.ts
+        │   │   │   ├── use-os.ts
+        │   │   │   ├── use-search.ts
+        │   │   │   ├── use-session.ts
+        │   │   │   ├── use-snapshots.ts
+        │   │   │   ├── use-streamChat.ts
+        │   │   │   ├── use-swipeable.ts
+        │   │   │   ├── use-synthesizer.ts
+        │   │   │   ├── use-toast.ts
+        │   │   │   ├── use-tools.ts
+        │   │   │   ├── use-typed.ts
+        │   │   │   └── use-utils.ts
+        │   │   ├── server
+        │   │   │   ├── actions.ts
+        │   │   │   └── cohereServerClient.ts
+        │   │   ├── stores
+        │   │   │   ├── index.ts
+        │   │   │   ├── persistedStore.ts
+        │   │   │   ├── slices
+        │   │   │   │   ├── citationsSlice.ts
+        │   │   │   │   ├── conversationSlice.ts
+        │   │   │   │   ├── filesSlice.ts
+        │   │   │   │   ├── paramsSlice.ts
+        │   │   │   │   └── settingsSlice.ts
+        │   │   │   └── streaming.ts
+        │   │   ├── styles
+        │   │   │   ├── code-style.css
+        │   │   │   ├── dark-mode.css
+        │   │   │   ├── fonts.css
+        │   │   │   ├── global.css
+        │   │   │   └── main.css
+        │   │   ├── themes
+        │   │   │   └── codeSnippetTheme.ts
+        │   │   ├── types
+        │   │   │   ├── index.d.ts
+        │   │   │   ├── message.ts
+        │   │   │   ├── tools.ts
+        │   │   │   └── util.ts
+        │   │   └── utils
+        │   │       ├── agents.ts
+        │   │       ├── citations.test.ts
+        │   │       ├── citations.ts
+        │   │       ├── cn.ts
+        │   │       ├── conversation.ts
+        │   │       ├── delimiters.ts
+        │   │       ├── download.ts
+        │   │       ├── error.ts
+        │   │       ├── file.ts
+        │   │       ├── format.ts
+        │   │       ├── getToolAuthUrl.ts
+        │   │       ├── grounding.ts
+        │   │       ├── index.ts
+        │   │       ├── pluralize.ts
+        │   │       ├── preview.ts
+        │   │       ├── queryString.ts
+        │   │       ├── simpleEmailValidation.ts
+        │   │       ├── tools.ts
+        │   │       └── urls.ts
+        │   ├── tailwind.config.js
+        │   ├── tsconfig.json
+        │   └── vitest.config.ts
+        ├── coral_web
+        │   ├── Dockerfile
+        │   ├── README.md
+        │   ├── next-env.d.ts
+        │   ├── next.config.mjs
+        │   ├── openapi-ts.config.ts
+        │   ├── package-lock.json
+        │   ├── package.json
+        │   ├── postcss.config.js
+        │   ├── public
+        │   │   ├── favicon.ico
+        │   │   ├── fonts
+        │   │   │   ├── CohereIcon-Default.woff
+        │   │   │   └── CohereIcon-Outline.woff
+        │   │   ├── images
+        │   │   │   ├── android-chrome-192x192.png
+        │   │   │   ├── android-chrome-512x512.png
+        │   │   │   ├── apple-touch-icon.png
+        │   │   │   ├── cellBackground.svg
+        │   │   │   ├── favicon-16x16.png
+        │   │   │   ├── favicon-32x32.png
+        │   │   │   ├── kycCellBackground.png
+        │   │   │   ├── mushroom-filled-icon-512x512.png
+        │   │   │   ├── share.png
+        │   │   │   └── white-filled-icon-512x512.png
+        │   │   └── site.webmanifest
+        │   ├── src
+        │   │   ├── app
+        │   │   │   ├── (auth)
+        │   │   │   │   ├── auth
+        │   │   │   │   │   └── [strategy]
+        │   │   │   │   │       ├── CompleteOauth.tsx
+        │   │   │   │   │       └── page.tsx
+        │   │   │   │   ├── layout.tsx
+        │   │   │   │   ├── login
+        │   │   │   │   │   ├── Login.tsx
+        │   │   │   │   │   └── page.tsx
+        │   │   │   │   ├── logout
+        │   │   │   │   │   ├── Logout.tsx
+        │   │   │   │   │   └── page.tsx
+        │   │   │   │   └── register
+        │   │   │   │       ├── Register.tsx
+        │   │   │   │       └── page.tsx
+        │   │   │   ├── (main)
+        │   │   │   │   ├── (chat)
+        │   │   │   │   │   ├── Chat.tsx
+        │   │   │   │   │   ├── a
+        │   │   │   │   │   │   └── [agentId]
+        │   │   │   │   │   │       ├── c
+        │   │   │   │   │   │       │   └── [conversationId]
+        │   │   │   │   │   │       │       └── page.tsx
+        │   │   │   │   │   │       └── page.tsx
+        │   │   │   │   │   ├── c
+        │   │   │   │   │   │   └── [conversationId]
+        │   │   │   │   │   │       └── page.tsx
+        │   │   │   │   │   ├── layout.tsx
+        │   │   │   │   │   └── page.tsx
+        │   │   │   │   ├── MainLayout.tsx
+        │   │   │   │   ├── discover
+        │   │   │   │   │   └── page.tsx
+        │   │   │   │   ├── layout.tsx
+        │   │   │   │   ├── loading.tsx
+        │   │   │   │   └── new
+        │   │   │   │       └── page.tsx
+        │   │   │   ├── _providers.tsx
+        │   │   │   ├── error.tsx
+        │   │   │   ├── healthz
+        │   │   │   │   ├── api
+        │   │   │   │   │   └── route.tsx
+        │   │   │   │   └── page.tsx
+        │   │   │   ├── layout.tsx
+        │   │   │   ├── not-found.tsx
+        │   │   │   ├── server.actions.ts
+        │   │   │   └── share
+        │   │   │       └── [id]
+        │   │   │           └── page.tsx
+        │   │   ├── assets
+        │   │   │   ├── lotties
+        │   │   │   │   ├── icon-loop-coral-950.json
+        │   │   │   │   └── icon-loop-coral-mushroom.json
+        │   │   │   └── svg
+        │   │   │       └── google-drive-icon.svg
+        │   │   ├── cohere-client
+        │   │   │   ├── ClientProvider.tsx
+        │   │   │   ├── client.ts
+        │   │   │   ├── constants.ts
+        │   │   │   ├── generated
+        │   │   │   │   ├── CohereClientGenerated.ts
+        │   │   │   │   ├── core
+        │   │   │   │   │   ├── ApiError.ts
+        │   │   │   │   │   ├── ApiRequestOptions.ts
+        │   │   │   │   │   ├── ApiResult.ts
+        │   │   │   │   │   ├── BaseHttpRequest.ts
+        │   │   │   │   │   ├── CancelablePromise.ts
+        │   │   │   │   │   ├── FetchHttpRequest.ts
+        │   │   │   │   │   ├── OpenAPI.ts
+        │   │   │   │   │   └── request.ts
+        │   │   │   │   ├── index.ts
+        │   │   │   │   ├── schemas.gen.ts
+        │   │   │   │   ├── services.gen.ts
+        │   │   │   │   └── types.gen.ts
+        │   │   │   ├── index.ts
+        │   │   │   ├── mappings.ts
+        │   │   │   ├── types.ts
+        │   │   │   └── utils.ts
+        │   │   ├── components
+        │   │   │   ├── Agents
+        │   │   │   │   ├── AgentCard.tsx
+        │   │   │   │   ├── AgentForm.tsx
+        │   │   │   │   ├── AgentToolFilePicker.tsx
+        │   │   │   │   ├── AgentsList.tsx
+        │   │   │   │   ├── AgentsSidePanel.tsx
+        │   │   │   │   ├── CreateAgent.tsx
+        │   │   │   │   ├── DeleteAgent.tsx
+        │   │   │   │   ├── DiscoverAgentCard.tsx
+        │   │   │   │   ├── DiscoverAgents.tsx
+        │   │   │   │   └── UpdateAgent.tsx
+        │   │   │   ├── AuthLink.tsx
+        │   │   │   ├── Avatar.tsx
+        │   │   │   ├── ButtonGroup.tsx
+        │   │   │   ├── Citations
+        │   │   │   │   ├── Citation.tsx
+        │   │   │   │   ├── CitationDocument.tsx
+        │   │   │   │   ├── CitationDocumentHeader.tsx
+        │   │   │   │   ├── CitationDocumentSnippet.tsx
+        │   │   │   │   ├── CitationPanel.tsx
+        │   │   │   │   └── CitationTextHighlighter.tsx
+        │   │   │   ├── ConnectDataModal.tsx
+        │   │   │   ├── Conversation
+        │   │   │   │   ├── Composer
+        │   │   │   │   │   ├── ComposerError.tsx
+        │   │   │   │   │   ├── ComposerFiles.tsx
+        │   │   │   │   │   ├── ComposerToolbar.tsx
+        │   │   │   │   │   ├── DataSourceMenu.tsx
+        │   │   │   │   │   ├── DragDropFileUploadOverlay.tsx
+        │   │   │   │   │   ├── EnabledDataSources.tsx
+        │   │   │   │   │   ├── ListboxOptions.tsx
+        │   │   │   │   │   ├── WebSearchConfigurationModal.tsx
+        │   │   │   │   │   └── index.tsx
+        │   │   │   │   ├── Header.tsx
+        │   │   │   │   ├── MessagingContainer.tsx
+        │   │   │   │   └── index.tsx
+        │   │   │   ├── ConversationError.tsx
+        │   │   │   ├── ConversationList
+        │   │   │   │   ├── ConversationCard.tsx
+        │   │   │   │   ├── ConversationListHeader.tsx
+        │   │   │   │   ├── ConversationListLoading.tsx
+        │   │   │   │   ├── ConversationListPanel.tsx
+        │   │   │   │   └── ConversationListPanelGroup.tsx
+        │   │   │   ├── DataTable.tsx
+        │   │   │   ├── DeploymentsDropdown.tsx
+        │   │   │   ├── EditEnvVariablesButton.tsx
+        │   │   │   ├── FileError.tsx
+        │   │   │   ├── FirstTurnSuggestions.tsx
+        │   │   │   ├── GuideTooltip.tsx
+        │   │   │   ├── IconButton.tsx
+        │   │   │   ├── KebabMenu.tsx
+        │   │   │   ├── Layout.tsx
+        │   │   │   ├── LongPressMenu.tsx
+        │   │   │   ├── MarkdownImage.tsx
+        │   │   │   ├── MessageContent.tsx
+        │   │   │   ├── MessageFile.tsx
+        │   │   │   ├── MessageRow.tsx
+        │   │   │   ├── MobileHeader.tsx
+        │   │   │   ├── Modals
+        │   │   │   │   ├── DeleteConversations.tsx
+        │   │   │   │   └── EditConversationTitle.tsx
+        │   │   │   ├── NavigationUserMenu.tsx
+        │   │   │   ├── ReadOnlyConversation.tsx
+        │   │   │   ├── Settings
+        │   │   │   │   ├── AgentsToolsTab.tsx
+        │   │   │   │   ├── FilesTab.tsx
+        │   │   │   │   ├── SettingsDrawer.tsx
+        │   │   │   │   ├── SettingsTab.tsx
+        │   │   │   │   ├── ToolsInfoBox.tsx
+        │   │   │   │   └── ToolsTab.tsx
+        │   │   │   ├── ShareModal.tsx
+        │   │   │   ├── Shared
+        │   │   │   │   ├── Banner
+        │   │   │   │   │   ├── Banner.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── BasicButton
+        │   │   │   │   │   ├── BasicButton.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Button
+        │   │   │   │   │   ├── Button.tsx
+        │   │   │   │   │   ├── CellButton
+        │   │   │   │   │   │   ├── CellButton.tsx
+        │   │   │   │   │   │   ├── cellButtonTheming.ts
+        │   │   │   │   │   │   └── index.ts
+        │   │   │   │   │   ├── MinimalButton
+        │   │   │   │   │   │   ├── MinimalButton.tsx
+        │   │   │   │   │   │   └── index.ts
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Cell
+        │   │   │   │   │   ├── Cell.tsx
+        │   │   │   │   │   ├── CellParts.tsx
+        │   │   │   │   │   ├── cellTheming.ts
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── CodeSnippet
+        │   │   │   │   │   ├── CodeSnippet.tsx
+        │   │   │   │   │   ├── index.ts
+        │   │   │   │   │   └── theme.ts
+        │   │   │   │   ├── CopyToClipboardButton
+        │   │   │   │   │   ├── CopyToClipboardButton.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── CoralLogo
+        │   │   │   │   │   ├── CoralLogo.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Checkbox
+        │   │   │   │   │   ├── Checkbox.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── DocumentIcon
+        │   │   │   │   │   ├── DocumentIcon.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── DragDropFileInput
+        │   │   │   │   │   ├── DragDropFileInput.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Dropdown
+        │   │   │   │   │   ├── Dropdown.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── FileInput.tsx
+        │   │   │   │   ├── GlobalHead
+        │   │   │   │   │   ├── GlobalHead.tsx
+        │   │   │   │   │   └── index.tsx
+        │   │   │   │   ├── HotKeys
+        │   │   │   │   │   ├── DialogNavigationKeys.tsx
+        │   │   │   │   │   ├── HotKeysDialog.tsx
+        │   │   │   │   │   ├── HotKeysProvider.tsx
+        │   │   │   │   │   ├── QuickActions.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Icon
+        │   │   │   │   │   ├── Icon.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── InlineLink
+        │   │   │   │   │   ├── InlineLink.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Input
+        │   │   │   │   │   ├── Input.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── InputLabel
+        │   │   │   │   │   ├── InputLabel.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Logo.tsx
+        │   │   │   │   ├── Markdown
+        │   │   │   │   │   ├── Markdown.tsx
+        │   │   │   │   │   ├── directives
+        │   │   │   │   │   │   ├── cite.ts
+        │   │   │   │   │   │   ├── code.ts
+        │   │   │   │   │   │   ├── table-tools.ts
+        │   │   │   │   │   │   ├── tag.ts
+        │   │   │   │   │   │   ├── unknown.ts
+        │   │   │   │   │   │   └── utils.ts
+        │   │   │   │   │   ├── index.ts
+        │   │   │   │   │   └── tags
+        │   │   │   │   │       ├── Iframe.tsx
+        │   │   │   │   │       ├── P.tsx
+        │   │   │   │   │       ├── Pre.tsx
+        │   │   │   │   │       └── References.tsx
+        │   │   │   │   ├── Modal
+        │   │   │   │   │   ├── Modal.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── NavigationBar
+        │   │   │   │   │   ├── NavigationBar.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── PageNotFound
+        │   │   │   │   │   ├── PageNotFound.tsx
+        │   │   │   │   │   └── index.tsx
+        │   │   │   │   ├── PageServerError
+        │   │   │   │   │   ├── PageServerError.tsx
+        │   │   │   │   │   └── index.tsx
+        │   │   │   │   ├── Skeleton
+        │   │   │   │   │   ├── Skeleton.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Slider
+        │   │   │   │   │   ├── Slider.module.css
+        │   │   │   │   │   ├── Slider.themes.module.css
+        │   │   │   │   │   ├── Slider.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Spinner
+        │   │   │   │   │   ├── Spinner.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Switch
+        │   │   │   │   │   ├── Switch.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Tabs
+        │   │   │   │   │   ├── Tabs.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Tag
+        │   │   │   │   │   ├── Tag.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Text
+        │   │   │   │   │   ├── Text.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── ToastNotification
+        │   │   │   │   │   ├── ToastNotification.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Toggle
+        │   │   │   │   │   ├── Toggle.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── ToggleWithAction
+        │   │   │   │   │   ├── ToggleWithAction.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── Tooltip
+        │   │   │   │   │   ├── Tooltip.tsx
+        │   │   │   │   │   └── index.ts
+        │   │   │   │   ├── WebManifestHead.tsx
+        │   │   │   │   └── index.ts
+        │   │   │   ├── ToggleCard.tsx
+        │   │   │   ├── ToolEvents.tsx
+        │   │   │   ├── ViewportFix.tsx
+        │   │   │   ├── Welcome
+        │   │   │   │   ├── CellBackground.tsx
+        │   │   │   │   ├── Navigation.tsx
+        │   │   │   │   └── OidcSSOButton.tsx
+        │   │   │   ├── Welcome.tsx
+        │   │   │   ├── WelcomeGuideTooltip.tsx
+        │   │   │   └── WelcomePage.tsx
+        │   │   ├── constants
+        │   │   │   ├── conversation.ts
+        │   │   │   ├── strings.tsx
+        │   │   │   └── tailwindConfigValues.ts
+        │   │   ├── constants.ts
+        │   │   ├── context
+        │   │   │   ├── BannerContext.tsx
+        │   │   │   ├── ModalContext.tsx
+        │   │   │   └── index.tsx
+        │   │   ├── env.mjs
+        │   │   ├── hooks
+        │   │   │   ├── actions.ts
+        │   │   │   ├── agents.ts
+        │   │   │   ├── authConfig.ts
+        │   │   │   ├── authStrategies.ts
+        │   │   │   ├── breakpoint.ts
+        │   │   │   ├── citations.ts
+        │   │   │   ├── conversation.tsx
+        │   │   │   ├── chat.ts
+        │   │   │   ├── chatRoutes.ts
+        │   │   │   ├── deployments.ts
+        │   │   │   ├── experimentalFeatures.ts
+        │   │   │   ├── files.ts
+        │   │   │   ├── fixCopyBug.ts
+        │   │   │   ├── ftux.ts
+        │   │   │   ├── generateTitle.ts
+        │   │   │   ├── grounding.ts
+        │   │   │   ├── lazyRef.ts
+        │   │   │   ├── oidcAuthRoute.ts
+        │   │   │   ├── os.ts
+        │   │   │   ├── search.ts
+        │   │   │   ├── session.ts
+        │   │   │   ├── settings.ts
+        │   │   │   ├── snapshots.ts
+        │   │   │   ├── streamChat.ts
+        │   │   │   ├── tags.tsx
+        │   │   │   ├── toast.ts
+        │   │   │   ├── tools.ts
+        │   │   │   ├── typed.ts
+        │   │   │   └── utils.ts
+        │   │   ├── stores
+        │   │   │   ├── index.ts
+        │   │   │   ├── persistedStore.ts
+        │   │   │   └── slices
+        │   │   │       ├── agentsSlice.ts
+        │   │   │       ├── citationsSlice.ts
+        │   │   │       ├── conversationSlice.ts
+        │   │   │       ├── filesSlice.ts
+        │   │   │       ├── paramsSlice.ts
+        │   │   │       └── settingsSlice.ts
+        │   │   ├── styles
+        │   │   │   ├── code-style.css
+        │   │   │   ├── fonts.css
+        │   │   │   ├── globals.css
+        │   │   │   ├── icons.css
+        │   │   │   └── main.css
+        │   │   ├── themes
+        │   │   │   └── cohereTheme.js
+        │   │   ├── types
+        │   │   │   ├── index.d.ts
+        │   │   │   ├── message.ts
+        │   │   │   ├── tools.ts
+        │   │   │   └── util.ts
+        │   │   └── utils
+        │   │       ├── citations.ts
+        │   │       ├── cn.ts
+        │   │       ├── conversation.ts
+        │   │       ├── delimiters.ts
+        │   │       ├── download.ts
+        │   │       ├── error.ts
+        │   │       ├── file.ts
+        │   │       ├── format.ts
+        │   │       ├── getCohereColor.ts
+        │   │       ├── grounding.ts
+        │   │       ├── index.ts
+        │   │       ├── pluralize.ts
+        │   │       ├── preview.ts
+        │   │       ├── queryString.ts
+        │   │       ├── simpleEmailValidation.ts
+        │   │       ├── tools.ts
+        │   │       └── urls.ts
+        │   ├── tailwind.config.js
+        │   └── tsconfig.json
+        └── slack_bot
+            ├── README.md
+            ├── eslint.config.js
+            ├── example-manifest.yaml
+            ├── package-lock.json
+            ├── package.json
+            ├── prisma
+            │   ├── migrations
+            │   │   ├── 20240610182251_initial
+            │   │   │   └── migration.sql
+            │   │   ├── 20240627183650_deployment
+            │   │   │   └── migration.sql
+            │   │   └── migration_lock.toml
+            │   └── schema.prisma
+            ├── scripts
+            │   └── patchVitestReport.mjs
+            ├── src
+            │   ├── cohere-client
+            │   │   ├── generated
+            │   │   │   ├── ToolkitClient.ts
+            │   │   │   ├── core
+            │   │   │   │   ├── ApiError.ts
+            │   │   │   │   ├── ApiRequestOptions.ts
+            │   │   │   │   ├── ApiResult.ts
+            │   │   │   │   ├── AxiosHttpRequest.ts
+            │   │   │   │   ├── BaseHttpRequest.ts
+            │   │   │   │   ├── CancelablePromise.ts
+            │   │   │   │   ├── OpenAPI.ts
+            │   │   │   │   └── request.ts
+            │   │   │   ├── index.ts
+            │   │   │   ├── schemas.gen.ts
+            │   │   │   ├── services.gen.ts
+            │   │   │   └── types.gen.ts
+            │   │   └── index.ts
+            │   ├── commands
+            │   │   ├── commandHelp.ts
+            │   │   ├── index.ts
+            │   │   ├── setDeployment.ts
+            │   │   ├── setModel.ts
+            │   │   ├── setPreamble.ts
+            │   │   ├── setTemperature.ts
+            │   │   ├── setTools.ts
+            │   │   ├── setupCommand.ts
+            │   │   ├── summarize.ts
+            │   │   ├── viewDeployment.ts
+            │   │   ├── viewModel.ts
+            │   │   ├── viewPreamble.ts
+            │   │   ├── viewTemperature.ts
+            │   │   └── viewTools.ts
+            │   ├── constants.ts
+            │   ├── handlers
+            │   │   ├── handleError.ts
+            │   │   ├── handleFirstReply.ts
+            │   │   ├── handleRagChatWithFile.ts
+            │   │   ├── handleSummarizeFile.ts
+            │   │   ├── handleSummarizeThread.ts
+            │   │   ├── handleThreadReply.ts
+            │   │   ├── handleUserActions.ts
+            │   │   └── index.ts
+            │   ├── index.ts
+            │   ├── reactions
+            │   │   ├── dismissEphemeral.ts
+            │   │   ├── index.ts
+            │   │   └── stopConversation.ts
+            │   ├── shortcuts
+            │   │   ├── index.ts
+            │   │   └── summarizeThread.ts
+            │   ├── utils
+            │   │   ├── actions.test.ts
+            │   │   ├── actions.ts
+            │   │   ├── files.ts
+            │   │   ├── formatRagCitations.test.ts
+            │   │   ├── formatRagCitations.ts
+            │   │   ├── getConversationId.test.ts
+            │   │   ├── getConversationId.ts
+            │   │   ├── getChannelSettings.ts
+            │   │   ├── getMessageBlocks.ts
+            │   │   ├── getReply.ts
+            │   │   ├── getSanitizedConversationHistory.ts
+            │   │   ├── getSanitizedMessage.test.ts
+            │   │   ├── getSanitizedMessage.ts
+            │   │   ├── getUsersRealName.ts
+            │   │   ├── messageHistory.ts
+            │   │   └── slackAuth.ts
+            │   └── views
+            │       ├── apiView.ts
+            │       ├── index.ts
+            │       └── toolsView.ts
+            ├── tsconfig.json
+            ├── tsup.config.ts
+            └── vitest.config.ts
+
+265 directories, 1247 files
